@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const fileContents = fs.readFileSync(path.join(__dirname, './input.txt')).toString('utf8');
-const arr = fileContents.split(/\s/);
+const arr = fileContents.split(/\n/);
 
 for (let arrIdx = 0; arrIdx < arr.length; arrIdx++) {
   for (let searchIdx = arrIdx + 1; searchIdx < arr.length; searchIdx++) {

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const fileContents = fs.readFileSync(path.join(__dirname, './input.txt')).toString('utf8');
-const arr = fileContents.split(/\s/);
+const arr = fileContents.split(/\n/);
 
 let map = [];
 let returnValue = 0;
