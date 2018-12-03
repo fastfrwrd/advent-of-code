@@ -14,9 +14,8 @@ for (let arrIdx = 0; arrIdx < arr.length; arrIdx++) {
     for (let charIdx = 0; charIdx < str1.length; charIdx++) {
       if (str1[charIdx] !== str2[charIdx]) {
         diffCharIdx = charIdx;
-        differences++;
+        if (++differences > 1) break;
       }
-      if (differences > 1) break;
     }
     
     // found the match
