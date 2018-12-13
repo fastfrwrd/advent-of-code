@@ -192,7 +192,6 @@ function moveCart(x, y) {
 let cartPositions = [];
 let turn = 0;
 while (cartPositions.length !== 1) {
-  console.log('turn', turn);
   cartPositions = [];
 
   for (let y = 0; y < state.length; y++) {
@@ -209,6 +208,7 @@ while (cartPositions.length !== 1) {
     }
   }
 
+  console.log('turn', turn);
   console.log(cartPositions);
 
   turn++;
