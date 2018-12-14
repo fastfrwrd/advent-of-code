@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+const fileContents = fs.readFileSync(path.join(__dirname, './input.txt')).toString('utf8');
+const inputRegex = /^([\d]+) players; last marble is worth ([\d]+) points$/;
+const [, playerCountStr, marbleCountStr] = inputRegex.exec(fileContents);
+const playerCount = Number(playerCountStr);
+const marbleCount = Number(marbleCountStr);
+
 class Marble {
   constructor(id) {
     this.id = id;
@@ -16,12 +22,6 @@ class Marble {
     this.prev = marble;
   }
 }
-
-const fileContents = fs.readFileSync(path.join(__dirname, './input.txt')).toString('utf8');
-const inputRegex = /^([\d]+) players; last marble is worth ([\d]+) points$/;
-const [, playerCountStr, marbleCountStr] = inputRegex.exec(fileContents);
-const playerCount = Number(playerCountStr);
-const marbleCount = Number(marbleCountStr);
 
 const scoreboard = new Array(playerCount).fill(0);
 let currentMarble = new Marble(0);
